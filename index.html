@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Difference Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⏰ Date Difference Calculator</h1>
+            <p>Calculate the exact time difference between any two dates</p>
+        </header>
+
+        <div class="calculator-card">
+            <form id="dateForm" class="date-form">
+                <div class="input-group">
+                    <div class="input-container">
+                        <label for="startDate">Start Date</label>
+                        <input type="datetime-local" id="startDate" name="startDate" required>
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="endDate">End Date</label>
+                        <input type="datetime-local" id="endDate" name="endDate" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="calculate-btn">
+                    <span>Calculate Difference</span>
+                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </button>
+            </form>
+
+            <div id="results" class="results hidden">
+                <h3>Time Difference</h3>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <span class="result-value" id="totalDays">0</span>
+                        <span class="result-label">Total Days</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-value" id="totalHours">0</span>
+                        <span class="result-label">Total Hours</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-value" id="totalMinutes">0</span>
+                        <span class="result-label">Total Minutes</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-value" id="totalSeconds">0</span>
+                        <span class="result-label">Total Seconds</span>
+                    </div>
+                </div>
+
+                <div class="detailed-breakdown">
+                    <h4>Detailed Breakdown</h4>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Years:</span>
+                        <span class="breakdown-value" id="years">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Months:</span>
+                        <span class="breakdown-value" id="months">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Days:</span>
+                        <span class="breakdown-value" id="days">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Hours:</span>
+                        <span class="breakdown-value" id="hours">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Minutes:</span>
+                        <span class="breakdown-value" id="minutes">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Seconds:</span>
+                        <span class="breakdown-value" id="seconds">0</span>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <p id="summaryText"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>Features</h3>
+            <ul>
+                <li>✨ Calculate precise time differences down to the second</li>
+                <li>📊 View results in multiple formats (days, hours, minutes, seconds)</li>
+                <li>📱 Responsive design works on all devices</li>
+                <li>🎯 Detailed breakdown by years, months, days, hours, minutes, and seconds</li>
+                <li>⚡ Real-time calculation with instant results</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Date Difference Calculator. Built with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
