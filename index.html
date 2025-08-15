@@ -3,7 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Difference Calculator</title>
+    <title>⏰ Date Difference Calculator - Calculate Time Between Dates</title>
+    <meta name="description" content="Calculate the exact time difference between any two dates and times. Get detailed breakdowns in years, months, days, hours, minutes, and seconds.">
+    <meta name="keywords" content="date calculator, time difference, date difference, days between dates, time calculator">
+    <meta name="author" content="ALGOGUY09">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://algoguy09.github.io/scaling-goggles/">
+    <meta property="og:title" content="⏰ Date Difference Calculator - Calculate Time Between Dates">
+    <meta property="og:description" content="Calculate the exact time difference between any two dates and times. Get detailed breakdowns in years, months, days, hours, minutes, and seconds.">
+    <meta property="og:image" content="https://algoguy09.github.io/scaling-goggles/favicon.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://algoguy09.github.io/scaling-goggles/">
+    <meta property="twitter:title" content="⏰ Date Difference Calculator - Calculate Time Between Dates">
+    <meta property="twitter:description" content="Calculate the exact time difference between any two dates and times. Get detailed breakdowns in years, months, days, hours, minutes, and seconds.">
+    <meta property="twitter:image" content="https://algoguy09.github.io/scaling-goggles/favicon.svg">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -28,12 +47,23 @@
                     </div>
                 </div>
 
-                <button type="submit" class="calculate-btn">
-                    <span>Calculate Difference</span>
-                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="m9 18 6-6-6-6"/>
-                    </svg>
-                </button>
+                <div class="button-group">
+                    <button type="submit" class="calculate-btn">
+                        <span>Calculate Difference</span>
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="reset-btn" onclick="resetForm()">
+                        <svg class="reset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                            <path d="M21 3v5h-5"/>
+                            <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                            <path d="M3 21v-5h5"/>
+                        </svg>
+                        Reset
+                    </button>
+                </div>
             </form>
 
             <div id="results" class="results hidden">
@@ -82,6 +112,14 @@
                     <div class="breakdown-item">
                         <span class="breakdown-label">Seconds:</span>
                         <span class="breakdown-value" id="seconds">0</span>
+                    </div>
+                </div>
+
+                <div class="business-days">
+                    <h4>Business Days</h4>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Business Days (Mon-Fri):</span>
+                        <span class="breakdown-value" id="businessDays">0</span>
                     </div>
                 </div>
 

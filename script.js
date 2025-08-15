@@ -87,6 +87,9 @@ class DateCalculator {
         // Calculate breakdown
         const breakdown = this.calculateBreakdown(startDate, endDate);
         
+        // Calculate business days
+        const businessDays = DateUtils.getBusinessDays(startDate, endDate);
+        
         // Update UI
         this.updateResults({
             totalDays,
@@ -94,6 +97,7 @@ class DateCalculator {
             totalMinutes,
             totalSeconds,
             breakdown,
+            businessDays,
             startDate,
             endDate
         });
@@ -155,7 +159,7 @@ class DateCalculator {
     }
 
     updateResults(data) {
-        const { totalDays, totalHours, totalMinutes, totalSeconds, breakdown, startDate, endDate } = data;
+        const { totalDays, totalHours, totalMinutes, totalSeconds, breakdown, businessDays, startDate, endDate } = data;
         
         // Update total values
         document.getElementById('totalDays').textContent = this.formatNumber(totalDays);
@@ -170,6 +174,9 @@ class DateCalculator {
         document.getElementById('hours').textContent = breakdown.hours;
         document.getElementById('minutes').textContent = breakdown.minutes;
         document.getElementById('seconds').textContent = breakdown.seconds;
+        
+        // Update business days
+        document.getElementById('businessDays').textContent = this.formatNumber(businessDays);
         
         // Update summary
         const summaryText = this.generateSummary(breakdown, startDate, endDate);
@@ -292,8 +299,14 @@ class DateUtils {
 
 // Initialize the calculator when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new DateCalculator();
+    window.calculator = new DateCalculator();
 });
+
+// Reset function
+function resetForm() {
+    window.calculator.setDefaultDates();
+    document.getElementById('results').classList.add('hidden');
+}
 
 // Add some interactive features
 document.addEventListener('DOMContentLoaded', () => {

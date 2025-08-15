@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://algoguy09.github.io/scaling-goggles/sitemap.xml
